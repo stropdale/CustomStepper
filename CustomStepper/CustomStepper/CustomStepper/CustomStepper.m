@@ -59,6 +59,7 @@
     }
     
     _upbutton.circleColour = self.stepperThemeColour;
+    _upbutton.symbolColour = self.symbolColour;
     
     return _upbutton;
 }
@@ -72,6 +73,7 @@
     }
     
     _downbutton.circleColour = self.stepperThemeColour;
+    _downbutton.symbolColour = self.symbolColour;
     
     return _downbutton;
 }
