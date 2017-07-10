@@ -18,7 +18,7 @@
 
 @implementation CustomStepper
 
-- (void) setUpComponents {
+- (void) setUpUIComponents {
     [self counter];
     [self upbutton];
     [self downbutton];
@@ -95,22 +95,22 @@
 
 - (void) setStepperThemeColour:(UIColor *)stepperThemeColour {
     _stepperThemeColour = stepperThemeColour;
-    [self setUpComponents];
+    [self setUpUIComponents];
 }
 
 - (void) setSymbolColour:(UIColor *)symbolColour {
     _symbolColour = symbolColour;
-    [self setUpComponents];
+    [self setUpUIComponents];
 }
 
 - (void) setStepperValue:(NSInteger)stepperValue {
     _stepperValue = stepperValue;
-    [self setUpComponents];
+    [self setUpUIComponents];
 }
 
 - (void) setCounterFont:(UIFont *)counterFont {
     _counterFont = counterFont;
-    [self setUpComponents];
+    [self setUpUIComponents];
 }
 
 #pragma mark - Object Lifecycle
@@ -118,15 +118,25 @@
 - (instancetype) initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setUpComponents];
-        
-        _maxValue = 99;
-        _symbolColour = UIColor.whiteColor;
-        _stepperThemeColour = UIColor.lightGrayColor;
-        _counterFont = [UIFont systemFontOfSize:17];
+        [self setupDefaults];
+        [self setUpUIComponents];
     }
     
     return self;
+}
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    
+    [self setupDefaults];
+    [self setUpUIComponents];
+}
+
+- (void) setupDefaults {
+    self.maxValue = 99;
+    self.symbolColour = UIColor.whiteColor;
+    self.stepperThemeColour = UIColor.lightGrayColor;
+    self.counterFont = [UIFont systemFontOfSize:17];
 }
 
 @end

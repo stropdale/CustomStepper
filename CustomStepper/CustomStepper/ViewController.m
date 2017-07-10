@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.stepper = [[CustomStepper alloc] initWithFrame:CGRectMake(20, 20, 90, 40)];
+    self.stepper = [[CustomStepper alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - 45,  100, 90, 40)];
     self.stepper.stepperThemeColour = UIColor.redColor;
     
     [self.stepper addTarget:self action:@selector(stepperValueChanged) forControlEvents:UIControlEventValueChanged];
