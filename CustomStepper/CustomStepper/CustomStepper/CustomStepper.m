@@ -33,6 +33,7 @@
     
     self.stepperValue++;
     self.counter.text = [NSString stringWithFormat:@"%ld", self.stepperValue];
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 - (void) downButtonTapped {
@@ -42,6 +43,7 @@
     
     self.stepperValue--;
     self.counter.text = [NSString stringWithFormat:@"%ld", self.stepperValue];
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 #pragma mark - Lazy Loading

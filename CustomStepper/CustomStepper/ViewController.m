@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) CustomStepper *stepper;
+
 @end
 
 @implementation ViewController
@@ -18,9 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    CustomStepper *stepper = [[CustomStepper alloc] initWithFrame:CGRectMake(20, 20, 90, 40)];
-    [self.view addSubview:stepper];
+    self.stepper = [[CustomStepper alloc] initWithFrame:CGRectMake(20, 20, 90, 40)];
+    [self.stepper addTarget:self action:@selector(stepperValueChanged) forControlEvents:UIControlEventValueChanged];
     
+    [self.view addSubview:self.stepper];
+}
+
+- (void) stepperValueChanged {
+    NSLog(@"Stepper value changed. Now %ld", self.stepper.stepperValue);
 }
 
 
