@@ -32,11 +32,4 @@
     NSLog(@"Stepper value changed. Now %ld", self.stepper.stepperValue);
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 @end

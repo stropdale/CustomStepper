@@ -23,9 +23,6 @@
 @end
 
 
-
-
-
 /**
  Subclass to allow some custom drawing
  */
