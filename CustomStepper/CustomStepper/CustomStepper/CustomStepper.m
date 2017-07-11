@@ -113,6 +113,14 @@
     [self setUpUIComponents];
 }
 
+- (void) setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    
+    self.upbutton.frame = CGRectMake(self.frame.size.width - self.frame.size.height, 0, self.frame.size.height, self.frame.size.height);
+    self.downbutton.frame = CGRectMake(0, 0, self.frame.size.height, self.frame.size.height);
+    self.counter.frame = self.bounds;
+}
+
 #pragma mark - Object Lifecycle
 
 - (instancetype) initWithFrame:(CGRect)frame {
